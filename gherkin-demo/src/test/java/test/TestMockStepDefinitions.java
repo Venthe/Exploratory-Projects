@@ -3,19 +3,14 @@ package test;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import eu.venthe.gherkindemo.GherkinDemoApplication;
 import eu.venthe.gherkindemo.SampleService;
 import eu.venthe.gherkindemo.dependency.SampleDependency;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.assertj.core.api.Assertions;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.ActiveProfiles;
 
-@SpringBootTest(classes = GherkinDemoApplication.class)
-@ActiveProfiles("mock")
 @RequiredArgsConstructor
-public class TestMockStepDefinitions {
+public class TestMockStepDefinitions extends AbstractCucumberIT {
     @NonNull
     private final SampleService sampleService;
     @NonNull
@@ -37,5 +32,10 @@ public class TestMockStepDefinitions {
     @Then("I get result {string}")
     public void iGetResult(String arg0) {
         Assertions.assertThat(arg0).isEqualTo(state);
+    }
+
+    @Given("I execute step one")
+    public void iExecuteStepOne() {
+        sampleService.firstStep();
     }
 }
