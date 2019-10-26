@@ -1,6 +1,5 @@
 package eu.venthe.jpaexploration.mssql.repository.impl;
 
-import eu.venthe.jpaexploration.TestRepository;
 import eu.venthe.jpaexploration.model.TestEntity;
 import eu.venthe.jpaexploration.mssql.repository.MSSQLCRUDRepository;
 import lombok.AllArgsConstructor;

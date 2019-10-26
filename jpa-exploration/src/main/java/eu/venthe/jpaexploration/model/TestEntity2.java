@@ -10,20 +10,20 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Entity(name = "test_entity")
-@Table(name = "test_entity")
+@Entity(name = "test_entity_2")
+@Table(name = "test_entity_2")
 @Getter
-public class TestEntity {
+public class TestEntity2 {
     @Id
-    @GeneratedValue(generator = "test_entity_id_seq", strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(generator = "test_entity_2_id_seq", strategy = GenerationType.SEQUENCE)
     @SequenceGenerator(
-            name = "test_entity_id_seq",
-            sequenceName = "test_entity_id_seq",
+            name = "test_entity_2_id_seq",
+            sequenceName = "test_entity_2_id_seq",
             allocationSize = 50
     )
     private long id;
 
-    @Column(name = "CHARACTER", nullable = false, length = 3)
+    @Column(name = "CHARACTER", nullable = false, length = 6)
     private String character;
 
     @Column(name = "NUMERIC", nullable = false, length = 7)

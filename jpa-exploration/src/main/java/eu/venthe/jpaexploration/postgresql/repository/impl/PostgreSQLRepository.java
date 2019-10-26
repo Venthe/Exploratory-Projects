@@ -1,8 +1,10 @@
 package eu.venthe.jpaexploration.postgresql.repository.impl;
 
+import eu.venthe.jpaexploration.CandidateRepository;
 import eu.venthe.jpaexploration.TestRepository;
 import eu.venthe.jpaexploration.batch.SafeBatchPersistenceManager;
 import eu.venthe.jpaexploration.model.TestEntity;
+import eu.venthe.jpaexploration.model.TestEntityDto;
 import eu.venthe.jpaexploration.postgresql.config.PostgreSQLConfig;
 import eu.venthe.jpaexploration.postgresql.repository.PostgreSQLCRUDRepository;
 import lombok.ToString;
@@ -20,7 +22,20 @@ import java.util.stream.Stream;
 @Repository
 @ToString
 @Slf4j
-public class PostgreSQLRepository implements TestRepository<TestEntity> {
+public class PostgreSQLRepository implements TestRepository<TestEntity>, CandidateRepository<TestEntity> {
+
+    @ToString.Exclude
+    private final PostgreSQLCRUDRepository repositoryCRUD;
+
+    @ToString.Exclude
+    @PersistenceUnit(unitName = PostgreSQLConfig.PERSISTENCE_UNIT_NAME)
+    private final EntityManagerFactory entityManagerFactory;
+
+    @ToString.Exclude
+    private SafeBatchPersistenceManager safeBatchPersistenceManager;
+
+    private final int batchSize;
+
     public PostgreSQLRepository(PostgreSQLCRUDRepository repositoryCRUD,
                                 EntityManagerFactory entityManagerFactory,
                                 SafeBatchPersistenceManager safeBatchPersistenceManager,
@@ -32,15 +47,6 @@ public class PostgreSQLRepository implements TestRepository<TestEntity> {
 
         log.debug("Batch size is {}", batchSize);
     }
-
-    @ToString.Exclude
-    private final PostgreSQLCRUDRepository repositoryCRUD;
-    @ToString.Exclude
-    @PersistenceUnit(unitName = PostgreSQLConfig.PERSISTENCE_UNIT_NAME)
-    private final EntityManagerFactory entityManagerFactory;
-    @ToString.Exclude
-    private SafeBatchPersistenceManager safeBatchPersistenceManager;
-    private final int batchSize;
 
     @Override
     @Transactional
@@ -73,6 +79,11 @@ public class PostgreSQLRepository implements TestRepository<TestEntity> {
     }
 
     @Override
+    public Stream<TestEntityDto> getAllDto() {
+        return repositoryCRUD.getAllDto();
+    }
+
+    @Override
     @Transactional
     public void batchedSaveStreamJooq(Stream<TestEntity> entities) {
         safeBatchPersistenceManager.batchedSaveStreamJooq(entityManagerFactory, entities, batchSize);
@@ -88,5 +99,17 @@ public class PostgreSQLRepository implements TestRepository<TestEntity> {
     @Override
     public TestEntity springDataSave(TestEntity e) {
         return repositoryCRUD.save(e);
+    }
+
+    @Override
+    @Transactional
+    public void batchSaveStream(Stream<TestEntity> entityStream) {
+        batchedSaveStreamGuava(entityStream);
+    }
+
+    @Override
+    @Transactional
+    public Stream<TestEntity> streamAll() {
+        return springDataLoadAllAsStream();
     }
 }

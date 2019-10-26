@@ -1,6 +1,9 @@
 package eu.venthe.jpaexploration;
 
 import eu.venthe.jpaexploration.model.TestEntity;
+import eu.venthe.jpaexploration.model.TestEntity2;
+import eu.venthe.jpaexploration.model.TestEntityDto;
+import eu.venthe.jpaexploration.postgresql.repository.impl.TestEntity2PostgreSQLRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.event.ContextRefreshedEvent;
@@ -25,8 +28,9 @@ import static org.apache.commons.lang3.RandomStringUtils.randomNumeric;
 @Service
 @Slf4j
 public class RepositoriesPerformanceTest {
-    private final static Long ENTITIES_COUNT = 30000L;
+    private final static Long ENTITIES_COUNT = 10000L;
     private final Set<TestRepository> repositories;
+    private final TestEntity2PostgreSQLRepository candidateRepository;
     private final SpringTransactionService transactionService;
 
     @EventListener({ContextRefreshedEvent.class})
@@ -37,19 +41,46 @@ public class RepositoriesPerformanceTest {
     }
 
     private void runDatabaseTests(TestRepository repository) {
+        testSave(repository);
+        testRead();
+
+        logTime(() -> RepositoriesPerformanceTest.truncate(repository));
+        logTime(() -> RepositoriesPerformanceTest.truncate(candidateRepository));
+        logTime(batchedSaveViaSpringDataGuava(repository));
+        transactionService.executeInTransaction(() -> {
+            Stream<TestEntityDto> result = logTime(getLoadAllDtoStream(repository));
+            logTime(mapAndPersist(repository, result)
+            );
+        });
+
+    }
+
+    private Runnable mapAndPersist(TestRepository repository, Stream<TestEntityDto> result) {
+        return () -> {
+            log.debug("mapAndPersist {} entities. repository={}", ENTITIES_COUNT, repository);
+            candidateRepository.batchSaveStream(
+                    result.map(entity -> TestEntity2.builder()
+                            .character(entity.getCharacter() + entity.getCharacter())
+                            .datetime(entity.getDatetime())
+                            .numeric(entity.getNumeric())
+                            .build()
+                    )
+            );
+        };
+    }
+
+    private void testSave(TestRepository repository) {
         /*
         // Slower by ~3%, clunkier to use compared to Guava. Smaller footprint?
         // ~26s on 30000 entities
         logTime(() -> RepositoriesPerformanceTest.truncate(repository));
         logTime(batchedSaveViaSpringDataJooq(repository));
-        */
 
         // Fastest, elegant. But Guava, how large is it?
         // ~25s on 30000 entities
         logTime(() -> RepositoriesPerformanceTest.truncate(repository));
         logTime(batchedSaveViaSpringDataGuava(repository));
 
-        /*
         // Abysmally slow.
         // 9.751s with 300 entities, extrapolating to 16m 15s with 30000 entities
         logTime(() -> RepositoriesPerformanceTest.truncate(repository));
@@ -63,16 +94,19 @@ public class RepositoriesPerformanceTest {
         logTime(() -> RepositoriesPerformanceTest.truncate(repository));
         logTime(manualSaveAll(repository));
         */
+    }
 
+    private void testRead() {
+        /*
+        // Not interesting, crashes on ~24mb of Xmx/Xms with 30000 entities
         transactionService.executeInTransaction(() -> {
             Stream<TestEntity> result = logTime(getLoadAllStream(repository));
             logTime(collectResult(result));
         });
 
-        /*
         // Not interesting, crashes on ~24mb of Xmx/Xms with 30000 entities
         logTime(loadAll(repository));
-         */
+        */
     }
 
     private Runnable manualSaveAll(TestRepository repository) {
@@ -96,6 +130,11 @@ public class RepositoriesPerformanceTest {
     private Supplier<Stream<TestEntity>> getLoadAllStream(TestRepository repository) {
         log.debug("loadAllStream - query");
         return repository::springDataLoadAllAsStream;
+    }
+
+    private Supplier<Stream<TestEntityDto>> getLoadAllDtoStream(TestRepository repository) {
+        log.debug("loadAllDtoStream - query");
+        return repository::getAllDto;
     }
 
     private Supplier<Iterable<TestEntity>> saveAllViaSpringData(TestRepository repository) {
@@ -127,7 +166,7 @@ public class RepositoriesPerformanceTest {
         return () -> entities.forEach(repository::springDataSave);
     }
 
-    private static void truncate(TestRepository repository) {
+    private static void truncate(Truncatable repository) {
         log.debug("truncating. repository={}", repository);
         repository.truncate();
     }
