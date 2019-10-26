@@ -26,12 +26,12 @@ import java.util.Map;
 )
 @AllArgsConstructor
 public class PostgreSQLConfig {
+    public static final String PERSISTENCE_UNIT_NAME = "PostgreSQLPersistenceUnitName";
     static final String BASE_PACKAGES = "eu.venthe.jpaexploration.postgresql.repository";
-    static final String ENTITY_MANAGER_FACTORY_BEAN = "PostgreSQLEntityManagerFactory";
-    static final String TRANSACTION_MANAGER_BEAN = "PostgreSQLTransactionManager";
-    private static final String DATA_SOURCE = "PostgreSQLDataSource";
+    static final String ENTITY_MANAGER_FACTORY_BEAN = "entityManagerFactory";
+    static final String TRANSACTION_MANAGER_BEAN = "transactionManager";
+    private static final String DATA_SOURCE = "dataSource";
     private static final String DATA_SOURCE_PROPERTY_KEY = "spring.datasource.postgresql";
-    private static final String PERSISTENCE_UNIT_NAME = "PostgreSQLPersistenceUnitName";
     private static final String SPRING_IMPLICIT_NAMING_STRATEGY = "org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy";
     private static final String SPRING_PHYSICAL_NAMING_STRATEGY = "org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy";
     private static final String IMPLICIT_NAMING_STRATEGY = "hibernate.implicit_naming_strategy";
