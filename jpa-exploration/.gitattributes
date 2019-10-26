@@ -1,0 +1,15 @@
+# Common
+*       text=auto
+*.txt   text
+*.java  text diff=java
+*.xml   text diff=xml
+
+# Database
+*.sql    text eol=lf
+
+# Shell
+*.sh    text eol=lf
+*.bat   text eol=crlf
+
+# Docker
+Dockerfile    text eol=lf
