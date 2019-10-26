@@ -1,0 +1,17 @@
+USE jpa_exploration;
+
+CREATE TABLE TEST
+(
+    ID_1      CHAR(4),
+    ID_2      CHAR(4),
+    CHARACTER CHAR(3),
+    NUMERIC   NUMERIC(7),
+    DATETIME  DATETIME,
+    CONSTRAINT PK_TEST
+        PRIMARY KEY (ID_1, ID_2)
+)
+GO
+
+CREATE index CI_TEST
+    ON TEST (ID_1, ID_2)
+GO
