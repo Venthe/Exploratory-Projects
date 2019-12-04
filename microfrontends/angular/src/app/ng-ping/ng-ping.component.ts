@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation, EventEmitter, Output, Input } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, EventEmitter, Output, Input, ChangeDetectorRef } from '@angular/core';
 import { Observable, Subject } from 'rxjs'
 import { map, distinctUntilChanged, filter, tap } from 'rxjs/operators'
 import _ from "lodash"
@@ -31,6 +31,10 @@ export class NgPingComponent implements OnInit {
   @Input() storeKey: string;
   @Input() dispatchKey: string;
 
+
+  constructor(private readonly ref: ChangeDetectorRef) {
+    
+  }
   getCurrentEvent(store: MyEvent[]): MyEvent {
     return store.slice(-1)[0];
   }
@@ -45,6 +49,9 @@ export class NgPingComponent implements OnInit {
     const subject = new Subject();
     this.store$ = subject.pipe(
       filter(el => el !== undefined && el !== null),
+      tap(() => {
+        this.ref.markForCheck();
+      }),
       map(list => _(list).filter(el => (el.type === "ping")).value()));
     setInterval(() => {
       const state = _.get(window, this.storeKey);
