@@ -4,6 +4,9 @@ enum AppId {
     REACT
 }
 
+const ReactCommunicationEventType: string = "pong";
+const ReacCommunicationEmiterEvent = "pingEmitter";
+
 interface PongEvent {
     type: string;
     payload: {
@@ -15,12 +18,12 @@ interface PongEvent {
 export const Pong = () => {
     const CommunicateWtihStore = (): void => {
         const myEvent: PongEvent = {
-            type: "pong", payload: {
+            type: ReactCommunicationEventType, payload: {
                 id: AppId.REACT,
-                text: "pong"
+                text: ReactCommunicationEventType
             }
         };
-        const pongEvent = new CustomEvent("pingEmitter", { detail: myEvent });
+        const pongEvent = new CustomEvent(ReacCommunicationEmiterEvent, { detail: myEvent });
         window.dispatchEvent(pongEvent);
     };
 
