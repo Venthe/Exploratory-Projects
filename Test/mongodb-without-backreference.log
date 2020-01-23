@@ -1,0 +1,181 @@
+10:54:56,961 |-INFO in ch.qos.logback.core.joran.spi.ConfigurationWatchList@25bbf683 - URL [jar:file:/C:/Users/jacek/Desktop/JPA-Performance-Compare/target/jpaperfcompare-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/logback-spring.xml] is not of type file
+10:54:57,010 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - Will scan for changes in [jar:file:/C:/Users/jacek/Desktop/JPA-Performance-Compare/target/jpaperfcompare-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/logback-spring.xml] 
+10:54:57,010 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - Setting ReconfigureOnChangeTask scanning period to 2 minutes
+10:54:57,012 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+10:54:57,012 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [CONSOLE]
+10:54:57,015 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+10:54:57,025 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.classic.AsyncAppender]
+10:54:57,025 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [ASYNC_CONSOLE]
+10:54:57,026 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [CONSOLE] to ch.qos.logback.classic.AsyncAppender[ASYNC_CONSOLE]
+10:54:57,026 |-INFO in ch.qos.logback.classic.AsyncAppender[ASYNC_CONSOLE] - Attaching appender named [CONSOLE] to AsyncAppender.
+10:54:57,027 |-INFO in ch.qos.logback.classic.AsyncAppender[ASYNC_CONSOLE] - Setting discardingThreshold to 20
+10:54:57,027 |-INFO in ch.qos.logback.classic.joran.action.RootLoggerAction - Setting level of ROOT logger to INFO
+10:54:57,027 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@276438c9 - Propagating INFO level on Logger[ROOT] onto the JUL framework
+10:54:57,027 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [ASYNC_CONSOLE] to Logger[ROOT]
+10:54:57,027 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - End of configuration.
+10:54:57,028 |-INFO in org.springframework.boot.logging.logback.SpringBootJoranConfigurator@77a57272 - Registering current configuration as safe fallback point
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.2.4.RELEASE)
+
+Starting JpaperfcompareApplication v0.0.1-SNAPSHOT on Asgard with PID 29828 (C:\Users\jacek\Desktop\JPA-Performance-Compare\target\jpaperfcompare-0.0.1-SNAPSHOT.jar started by jacek in C:\Users\jacek\Desktop\JPA-Performance-Compare\target)
+No active profile set, falling back to default profiles: default
+Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+Finished Spring Data repository scanning in 29ms. Found 2 MongoDB repository interfaces.
+Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+Opened connection [connectionId{localValue:1, serverValue:8}] to localhost:27017
+Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 2]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=2572200}
+Test data size: 100
+Opened connection [connectionId{localValue:2, serverValue:9}] to localhost:27017
+PerfDaySimple: Inserting test data (100) - Per element 0.002705601s
+PerfDaySimple: Inserting test data (100) - Elements per second: 369.6036481358485
+PerfDaySimple: Inserting test data (100) - Total duration 0,271s
+PerfDaySimple > Repository: Testing performance (100) - Per element 0.00021811400000000002s
+PerfDaySimple > Repository: Testing performance (100) - Elements per second: 4584.758429078372
+PerfDaySimple > Repository: Testing performance (100) - Total duration 0,022s
+PerfDaySimple > Java: Testing performance (100) - Per element 0.0000015119999999999999s
+PerfDaySimple > Java: Testing performance (100) - Elements per second: 661375.6613756614
+PerfDaySimple > Java: Testing performance (100) - Total duration 0s
+PerfDaySimple: Testing performance (100) - Per element 0.00022738s
+PerfDaySimple: Testing performance (100) - Elements per second: 4397.92417978714
+PerfDaySimple: Testing performance (100) - Total duration 0,023s
+PerfDayComplex (Best case scenario): Inserting test data (100) - Per element 0.0009475859999999999s
+PerfDayComplex (Best case scenario): Inserting test data (100) - Elements per second: 1055.3131852939998
+PerfDayComplex (Best case scenario): Inserting test data (100) - Total duration 0,095s
+PerfDayComplex (Best case scenario) > Repository: Testing performance (100) - Per element 0.000060066s
+PerfDayComplex (Best case scenario) > Repository: Testing performance (100) - Elements per second: 16648.353477841043
+PerfDayComplex (Best case scenario) > Repository: Testing performance (100) - Total duration 0,006s
+PerfDayComplex (Best case scenario) > Java: Testing performance (100) - Per element 0.000009654000000000001s
+PerfDayComplex (Best case scenario) > Java: Testing performance (100) - Elements per second: 103584.00662937641
+PerfDayComplex (Best case scenario) > Java: Testing performance (100) - Total duration 0,001s
+PerfDayComplex (Best case scenario): Testing performance (100) - Per element 0.000077194s
+PerfDayComplex (Best case scenario): Testing performance (100) - Elements per second: 12954.3746923336
+PerfDayComplex (Best case scenario): Testing performance (100) - Total duration 0,008s
+PerfDayComplex (Worst case scenario): Inserting test data (100) - Per element 0.000868496s
+PerfDayComplex (Worst case scenario): Inserting test data (100) - Elements per second: 1151.415780844126
+PerfDayComplex (Worst case scenario): Inserting test data (100) - Total duration 0,087s
+PerfDayComplex (Worst case scenario) > Repository: Testing performance (100) - Per element 0.00007946099999999999s
+PerfDayComplex (Worst case scenario) > Repository: Testing performance (100) - Elements per second: 12584.790022778472
+PerfDayComplex (Worst case scenario) > Repository: Testing performance (100) - Total duration 0,008s
+PerfDayComplex (Worst case scenario) > Java: Testing performance (100) - Per element 0.000069736s
+PerfDayComplex (Worst case scenario) > Java: Testing performance (100) - Elements per second: 14339.79580130779
+PerfDayComplex (Worst case scenario) > Java: Testing performance (100) - Total duration 0,007s
+PerfDayComplex (Worst case scenario): Testing performance (100) - Per element 0.00015461900000000002s
+PerfDayComplex (Worst case scenario): Testing performance (100) - Elements per second: 6467.510461198171
+PerfDayComplex (Worst case scenario): Testing performance (100) - Total duration 0,015s
+Test data size: 17 000
+PerfDaySimple: Inserting test data (17 000) - Per element 0.00044731684705882354s
+PerfDaySimple: Inserting test data (17 000) - Elements per second: 2235.5518388702603
+PerfDaySimple: Inserting test data (17 000) - Total duration 7,604s
+PerfDaySimple > Repository: Testing performance (17 000) - Per element 0.000005344229411764706s
+PerfDaySimple > Repository: Testing performance (17 000) - Elements per second: 187117.71575498144
+PerfDaySimple > Repository: Testing performance (17 000) - Total duration 0,091s
+PerfDaySimple > Java: Testing performance (17 000) - Per element 0.0000000969764705882353s
+PerfDaySimple > Java: Testing performance (17 000) - Elements per second: 10311779.69185976
+PerfDaySimple > Java: Testing performance (17 000) - Total duration 0,002s
+PerfDaySimple: Testing performance (17 000) - Per element 0.000005486094117647059s
+PerfDaySimple: Testing performance (17 000) - Elements per second: 182279.04562980626
+PerfDaySimple: Testing performance (17 000) - Total duration 0,093s
+PerfDayComplex (Best case scenario): Inserting test data (17 000) - Per element 0.00041818003529411766s
+PerfDayComplex (Best case scenario): Inserting test data (17 000) - Elements per second: 2391.314543021338
+PerfDayComplex (Best case scenario): Inserting test data (17 000) - Total duration 7,109s
+PerfDayComplex (Best case scenario) > Repository: Testing performance (17 000) - Per element 0.000007535582352941176s
+PerfDayComplex (Best case scenario) > Repository: Testing performance (17 000) - Elements per second: 132703.74513387075
+PerfDayComplex (Best case scenario) > Repository: Testing performance (17 000) - Total duration 0,128s
+PerfDayComplex (Best case scenario) > Java: Testing performance (17 000) - Per element 0.0000011212823529411765s
+PerfDayComplex (Best case scenario) > Java: Testing performance (17 000) - Elements per second: 891836.0280770966
+PerfDayComplex (Best case scenario) > Java: Testing performance (17 000) - Total duration 0,019s
+PerfDayComplex (Best case scenario): Testing performance (17 000) - Per element 0.000008702688235294119s
+PerfDayComplex (Best case scenario): Testing performance (17 000) - Elements per second: 114907.0233200424
+PerfDayComplex (Best case scenario): Testing performance (17 000) - Total duration 0,148s
+PerfDayComplex (Worst case scenario): Inserting test data (17 000) - Per element 0.00042235870588235296s
+PerfDayComplex (Worst case scenario): Inserting test data (17 000) - Elements per second: 2367.6557060920336
+PerfDayComplex (Worst case scenario): Inserting test data (17 000) - Total duration 7,18s
+PerfDayComplex (Worst case scenario) > Repository: Testing performance (17 000) - Per element 0.000008719058823529412s
+PerfDayComplex (Worst case scenario) > Repository: Testing performance (17 000) - Elements per second: 114691.2780656304
+PerfDayComplex (Worst case scenario) > Repository: Testing performance (17 000) - Total duration 0,148s
+PerfDayComplex (Worst case scenario) > Java: Testing performance (17 000) - Per element 0.000009467441176470587s
+PerfDayComplex (Worst case scenario) > Java: Testing performance (17 000) - Elements per second: 105625.16115603634
+PerfDayComplex (Worst case scenario) > Java: Testing performance (17 000) - Total duration 0,161s
+PerfDayComplex (Worst case scenario): Testing performance (17 000) - Per element 0.000018222170588235296s
+PerfDayComplex (Worst case scenario): Testing performance (17 000) - Elements per second: 54878.204281855746
+PerfDayComplex (Worst case scenario): Testing performance (17 000) - Total duration 0,31s
+Test data size: 41 553
+PerfDaySimple: Inserting test data (41 553) - Per element 0.00041271233123962164s
+PerfDaySimple: Inserting test data (41 553) - Elements per second: 2422.995205877185
+PerfDaySimple: Inserting test data (41 553) - Total duration 17,149s
+PerfDaySimple > Repository: Testing performance (41 553) - Per element 0.000002716335763964094s
+PerfDaySimple > Repository: Testing performance (41 553) - Elements per second: 368143.0010480908
+PerfDaySimple > Repository: Testing performance (41 553) - Total duration 0,113s
+PerfDaySimple > Java: Testing performance (41 553) - Per element 0.000000016735253772290808s
+PerfDaySimple > Java: Testing performance (41 553) - Elements per second: 59754098.36065574
+PerfDaySimple > Java: Testing performance (41 553) - Total duration 0,001s
+PerfDaySimple: Testing performance (41 553) - Per element 0.0000027424782807498855s
+PerfDaySimple: Testing performance (41 553) - Elements per second: 364633.6990229751
+PerfDaySimple: Testing performance (41 553) - Total duration 0,114s
+PerfDayComplex (Best case scenario): Inserting test data (41 553) - Per element 0.0004166063316728034s
+PerfDayComplex (Best case scenario): Inserting test data (41 553) - Elements per second: 2400.3475798956065
+PerfDayComplex (Best case scenario): Inserting test data (41 553) - Total duration 17,311s
+PerfDayComplex (Best case scenario) > Repository: Testing performance (41 553) - Per element 0.0000031761677857194424s
+PerfDayComplex (Best case scenario) > Repository: Testing performance (41 553) - Elements per second: 314844.8279389268
+PerfDayComplex (Best case scenario) > Repository: Testing performance (41 553) - Total duration 0,132s
+PerfDayComplex (Best case scenario) > Java: Testing performance (41 553) - Per element 0.00000017068322383462083s
+PerfDayComplex (Best case scenario) > Java: Testing performance (41 553) - Elements per second: 5858806.60989228
+PerfDayComplex (Best case scenario) > Java: Testing performance (41 553) - Total duration 0,007s
+PerfDayComplex (Best case scenario): Testing performance (41 553) - Per element 0.000003357680552547349s
+PerfDayComplex (Best case scenario): Testing performance (41 553) - Elements per second: 297824.6394646854
+PerfDayComplex (Best case scenario): Testing performance (41 553) - Total duration 0,14s
+PerfDayComplex (Worst case scenario): Inserting test data (41 553) - Per element 0.0004301829254205473s
+PerfDayComplex (Worst case scenario): Inserting test data (41 553) - Elements per second: 2324.5924952097967
+PerfDayComplex (Worst case scenario): Inserting test data (41 553) - Total duration 17,875s
+PerfDayComplex (Worst case scenario) > Repository: Testing performance (41 553) - Per element 0.000009892768271845594s
+PerfDayComplex (Worst case scenario) > Repository: Testing performance (41 553) - Elements per second: 101083.94056352843
+PerfDayComplex (Worst case scenario) > Repository: Testing performance (41 553) - Total duration 0,411s
+PerfDayComplex (Worst case scenario) > Java: Testing performance (41 553) - Per element 0.000007667954179000313s
+PerfDayComplex (Worst case scenario) > Java: Testing performance (41 553) - Elements per second: 130412.88153998491
+PerfDayComplex (Worst case scenario) > Java: Testing performance (41 553) - Total duration 0,319s
+PerfDayComplex (Worst case scenario): Testing performance (41 553) - Per element 0.000017571872066998775s
+PerfDayComplex (Worst case scenario): Testing performance (41 553) - Elements per second: 56909.13274278107
+PerfDayComplex (Worst case scenario): Testing performance (41 553) - Total duration 0,73s
+Test data size: 50 000
+PerfDaySimple: Inserting test data (50 000) - Per element 0.000404968518s
+PerfDaySimple: Inserting test data (50 000) - Elements per second: 2469.327751546356
+PerfDaySimple: Inserting test data (50 000) - Total duration 20,248s
+PerfDaySimple > Repository: Testing performance (50 000) - Per element 0.00000281007s
+PerfDaySimple > Repository: Testing performance (50 000) - Elements per second: 355863.0212058774
+PerfDaySimple > Repository: Testing performance (50 000) - Total duration 0,141s
+PerfDaySimple > Java: Testing performance (50 000) - Per element 0.000000041048s
+PerfDaySimple > Java: Testing performance (50 000) - Elements per second: 24361722.861040734
+PerfDaySimple > Java: Testing performance (50 000) - Total duration 0,002s
+PerfDaySimple: Testing performance (50 000) - Per element 0.000002859834s
+PerfDaySimple: Testing performance (50 000) - Elements per second: 349670.645219268
+PerfDaySimple: Testing performance (50 000) - Total duration 0,143s
+PerfDayComplex (Best case scenario): Inserting test data (50 000) - Per element 0.00041244452600000005s
+PerfDayComplex (Best case scenario): Inserting test data (50 000) - Elements per second: 2424.568486090175
+PerfDayComplex (Best case scenario): Inserting test data (50 000) - Total duration 20,622s
+PerfDayComplex (Best case scenario) > Repository: Testing performance (50 000) - Per element 0.000003615718s
+PerfDayComplex (Best case scenario) > Repository: Testing performance (50 000) - Elements per second: 276570.24137391243
+PerfDayComplex (Best case scenario) > Repository: Testing performance (50 000) - Total duration 0,181s
+PerfDayComplex (Best case scenario) > Java: Testing performance (50 000) - Per element 0.000000134958s
+PerfDayComplex (Best case scenario) > Java: Testing performance (50 000) - Elements per second: 7409712.65134338
+PerfDayComplex (Best case scenario) > Java: Testing performance (50 000) - Total duration 0,007s
+PerfDayComplex (Best case scenario): Testing performance (50 000) - Per element 0.000003760722s
+PerfDayComplex (Best case scenario): Testing performance (50 000) - Elements per second: 265906.3871246
+PerfDayComplex (Best case scenario): Testing performance (50 000) - Total duration 0,188s
+PerfDayComplex (Worst case scenario): Inserting test data (50 000) - Per element 0.00043415495s
+PerfDayComplex (Worst case scenario): Inserting test data (50 000) - Elements per second: 2303.3251146854363
+PerfDayComplex (Worst case scenario): Inserting test data (50 000) - Total duration 21,708s
+PerfDayComplex (Worst case scenario) > Repository: Testing performance (50 000) - Per element 0.000008735425999999999s
+PerfDayComplex (Worst case scenario) > Repository: Testing performance (50 000) - Elements per second: 114476.38615449323
+PerfDayComplex (Worst case scenario) > Repository: Testing performance (50 000) - Total duration 0,437s
+PerfDayComplex (Worst case scenario) > Java: Testing performance (50 000) - Per element 0.000007315272s
+PerfDayComplex (Worst case scenario) > Java: Testing performance (50 000) - Elements per second: 136700.31681665426
+PerfDayComplex (Worst case scenario) > Java: Testing performance (50 000) - Total duration 0,366s
+PerfDayComplex (Worst case scenario): Testing performance (50 000) - Per element 0.000016061612s
+PerfDayComplex (Worst case scenario): Testing performance (50 000) - Elements per second: 62260.25133716341
+PerfDayComplex (Worst case scenario): Testing performance (50 000) - Total duration 0,803s
