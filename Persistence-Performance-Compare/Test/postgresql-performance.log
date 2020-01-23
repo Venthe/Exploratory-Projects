@@ -1,0 +1,440 @@
+00:28:58,028 |-INFO in ch.qos.logback.classic.BasicConfigurator@10dba097 - Setting up default configuration.
+00:28:58,294 |-INFO in ch.qos.logback.core.joran.spi.ConfigurationWatchList@704d6e83 - URL [jar:file:/C:/Users/jacek/Desktop/JPA-Performance-Compare/target/jpaperfcompare-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/logback-spring.xml] is not of type file
+00:28:58,330 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - Will scan for changes in [jar:file:/C:/Users/jacek/Desktop/JPA-Performance-Compare/target/jpaperfcompare-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/logback-spring.xml] 
+00:28:58,330 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - Setting ReconfigureOnChangeTask scanning period to 2 minutes
+00:28:58,335 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+00:28:58,335 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [CONSOLE]
+00:28:58,339 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+00:28:58,351 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.classic.AsyncAppender]
+00:28:58,352 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [ASYNC_CONSOLE]
+00:28:58,353 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [CONSOLE] to ch.qos.logback.classic.AsyncAppender[ASYNC_CONSOLE]
+00:28:58,353 |-INFO in ch.qos.logback.classic.AsyncAppender[ASYNC_CONSOLE] - Attaching appender named [CONSOLE] to AsyncAppender.
+00:28:58,354 |-INFO in ch.qos.logback.classic.AsyncAppender[ASYNC_CONSOLE] - Setting discardingThreshold to 20
+00:28:58,354 |-INFO in ch.qos.logback.classic.joran.action.RootLoggerAction - Setting level of ROOT logger to INFO
+00:28:58,354 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@1442d7b5 - Propagating INFO level on Logger[ROOT] onto the JUL framework
+00:28:58,354 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [ASYNC_CONSOLE] to Logger[ROOT]
+00:28:58,354 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - End of configuration.
+00:28:58,354 |-INFO in org.springframework.boot.logging.logback.SpringBootJoranConfigurator@76a4d6c - Registering current configuration as safe fallback point
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.2.4.RELEASE)
+
+Starting JpaperfcompareApplication v0.0.1-SNAPSHOT on Asgard with PID 13756 (C:\Users\jacek\Desktop\JPA-Performance-Compare\target\jpaperfcompare-0.0.1-SNAPSHOT.jar started by jacek in C:\Users\jacek\Desktop\JPA-Performance-Compare\target)
+No active profile set, falling back to default profiles: default
+Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+Finished Spring Data repository scanning in 29ms. Found 2 JPA repository interfaces.
+HHH000204: Processing PersistenceUnitInfo [name: default]
+HHH000412: Hibernate Core {5.4.10.Final}
+HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+HikariPool-1 - Starting...
+HikariPool-1 - Start completed.
+HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+Initialized JPA EntityManagerFactory for persistence unit 'default'
+Test data size: 100
+PerfDaySimple: Inserting test data (100) - Per element 0.00145619s
+PerfDaySimple: Inserting test data (100) - Elements per second: 686.7235731600958
+PerfDaySimple: Inserting test data (100) - Total duration 0,146s
+PerfDaySimple > Repository: Testing performance (100) - Per element 0.00006643s
+PerfDaySimple > Repository: Testing performance (100) - Elements per second: 15053.439710973958
+PerfDaySimple > Repository: Testing performance (100) - Total duration 0,007s
+PerfDaySimple > Java: Testing performance (100) - Per element 0.0000016770000000000002s
+PerfDaySimple > Java: Testing performance (100) - Elements per second: 596302.9218843172
+PerfDaySimple > Java: Testing performance (100) - Total duration 0s
+PerfDaySimple: Testing performance (100) - Per element 0.00016881199999999998s
+PerfDaySimple: Testing performance (100) - Elements per second: 5923.749496481293
+PerfDaySimple: Testing performance (100) - Total duration 0,017s
+PerfDayComplex (Best case scenario): Inserting test data (100) - Per element 0.002046424s
+PerfDayComplex (Best case scenario): Inserting test data (100) - Elements per second: 488.6572870529275
+PerfDayComplex (Best case scenario): Inserting test data (100) - Total duration 0,205s
+PerfDayComplex (Best case scenario) > Repository: Testing performance (100) - Per element 0.000614256s
+PerfDayComplex (Best case scenario) > Repository: Testing performance (100) - Elements per second: 1627.985725821156
+PerfDayComplex (Best case scenario) > Repository: Testing performance (100) - Total duration 0,061s
+PerfDayComplex (Best case scenario) > Java: Testing performance (100) - Per element 0.000013002999999999999s
+PerfDayComplex (Best case scenario) > Java: Testing performance (100) - Elements per second: 76905.32953933708
+PerfDayComplex (Best case scenario) > Java: Testing performance (100) - Total duration 0,001s
+PerfDayComplex (Best case scenario): Testing performance (100) - Per element 0.0006454070000000001s
+PerfDayComplex (Best case scenario): Testing performance (100) - Elements per second: 1549.4099072368288
+PerfDayComplex (Best case scenario): Testing performance (100) - Total duration 0,065s
+PerfDayComplex (Worst case scenario): Inserting test data (100) - Per element 0.0033638459999999998s
+PerfDayComplex (Worst case scenario): Inserting test data (100) - Elements per second: 297.2787695988461
+PerfDayComplex (Worst case scenario): Inserting test data (100) - Total duration 0,336s
+PerfDayComplex (Worst case scenario) > Repository: Testing performance (100) - Per element 0.000576019s
+PerfDayComplex (Worst case scenario) > Repository: Testing performance (100) - Elements per second: 1736.0538454460705
+PerfDayComplex (Worst case scenario) > Repository: Testing performance (100) - Total duration 0,058s
+PerfDayComplex (Worst case scenario) > Java: Testing performance (100) - Per element 0.000070869s
+PerfDayComplex (Worst case scenario) > Java: Testing performance (100) - Elements per second: 14110.541985917678
+PerfDayComplex (Worst case scenario) > Java: Testing performance (100) - Total duration 0,007s
+PerfDayComplex (Worst case scenario): Testing performance (100) - Per element 0.000663718s
+PerfDayComplex (Worst case scenario): Testing performance (100) - Elements per second: 1506.6639747603651
+PerfDayComplex (Worst case scenario): Testing performance (100) - Total duration 0,066s
+Test data size: 17 000
+PerfDaySimple: Inserting test data (17 000) - Per element 0.0006986123117647059s
+PerfDaySimple: Inserting test data (17 000) - Elements per second: 1431.409070753397
+PerfDaySimple: Inserting test data (17 000) - Total duration 11,876s
+PerfDaySimple > Repository: Testing performance (17 000) - Per element 0.0000031329470588235294s
+PerfDaySimple > Repository: Testing performance (17 000) - Elements per second: 319188.28541440965
+PerfDaySimple > Repository: Testing performance (17 000) - Total duration 0,053s
+PerfDaySimple > Java: Testing performance (17 000) - Per element 0.00000011165294117647059s
+PerfDaySimple > Java: Testing performance (17 000) - Elements per second: 8956324.74579843
+PerfDaySimple > Java: Testing performance (17 000) - Total duration 0,002s
+PerfDaySimple: Testing performance (17 000) - Per element 0.000003822470588235294s
+PerfDaySimple: Testing performance (17 000) - Elements per second: 261610.90763596076
+PerfDaySimple: Testing performance (17 000) - Total duration 0,065s
+PerfDayComplex (Best case scenario): Inserting test data (17 000) - Per element 0.0028355977176470586s
+PerfDayComplex (Best case scenario): Inserting test data (17 000) - Elements per second: 352.65933308402674
+PerfDayComplex (Best case scenario): Inserting test data (17 000) - Total duration 48,205s
+PerfDayComplex (Best case scenario) > Repository: Testing performance (17 000) - Per element 0.0014164655352941176s
+PerfDayComplex (Best case scenario) > Repository: Testing performance (17 000) - Elements per second: 705.9825848797359
+PerfDayComplex (Best case scenario) > Repository: Testing performance (17 000) - Total duration 24,08s
+PerfDayComplex (Best case scenario) > Java: Testing performance (17 000) - Per element 0.000000973264705882353s
+PerfDayComplex (Best case scenario) > Java: Testing performance (17 000) - Elements per second: 1027469.7047535583
+PerfDayComplex (Best case scenario) > Java: Testing performance (17 000) - Total duration 0,017s
+PerfDayComplex (Best case scenario): Testing performance (17 000) - Per element 0.0014180166647058824s
+PerfDayComplex (Best case scenario): Testing performance (17 000) - Elements per second: 705.2103299557589
+PerfDayComplex (Best case scenario): Testing performance (17 000) - Total duration 24,106s
+00:31:28,335 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+PerfDayComplex (Worst case scenario): Inserting test data (17 000) - Per element 0.0028387663647058826s
+PerfDayComplex (Worst case scenario): Inserting test data (17 000) - Elements per second: 352.26569274347713
+PerfDayComplex (Worst case scenario): Inserting test data (17 000) - Total duration 48,259s
+PerfDayComplex (Worst case scenario) > Repository: Testing performance (17 000) - Per element 0.0033651261411764702s
+PerfDayComplex (Worst case scenario) > Repository: Testing performance (17 000) - Elements per second: 297.16568058586756
+PerfDayComplex (Worst case scenario) > Repository: Testing performance (17 000) - Total duration 57,207s
+PerfDayComplex (Worst case scenario) > Java: Testing performance (17 000) - Per element 0.000011150411764705882s
+PerfDayComplex (Worst case scenario) > Java: Testing performance (17 000) - Elements per second: 89682.78670795592
+PerfDayComplex (Worst case scenario) > Java: Testing performance (17 000) - Total duration 0,19s
+PerfDayComplex (Worst case scenario): Testing performance (17 000) - Per element 0.0033767735235294117s
+PerfDayComplex (Worst case scenario): Testing performance (17 000) - Elements per second: 296.1406777896072
+PerfDayComplex (Worst case scenario): Testing performance (17 000) - Total duration 57,405s
+Test data size: 50 000
+PerfDaySimple: Inserting test data (50 000) - Per element 0.0006951706319999999s
+PerfDaySimple: Inserting test data (50 000) - Elements per second: 1438.4957504936717
+PerfDaySimple: Inserting test data (50 000) - Total duration 34,759s
+PerfDaySimple > Repository: Testing performance (50 000) - Per element 0.000001719608s
+PerfDaySimple > Repository: Testing performance (50 000) - Elements per second: 581527.8830989389
+PerfDaySimple > Repository: Testing performance (50 000) - Total duration 0,086s
+PerfDaySimple > Java: Testing performance (50 000) - Per element 0.000000018678s
+PerfDaySimple > Java: Testing performance (50 000) - Elements per second: 53538922.79687332
+PerfDaySimple > Java: Testing performance (50 000) - Total duration 0,001s
+PerfDaySimple: Testing performance (50 000) - Per element 0.0000018516179999999998s
+PerfDaySimple: Testing performance (50 000) - Elements per second: 540068.1998122723
+PerfDaySimple: Testing performance (50 000) - Total duration 0,093s
+00:33:58,334 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+00:36:28,335 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+PerfDayComplex (Best case scenario): Inserting test data (50 000) - Per element 0.001373844316s
+PerfDayComplex (Best case scenario): Inserting test data (50 000) - Elements per second: 727.8845123525626
+PerfDayComplex (Best case scenario): Inserting test data (50 000) - Total duration 68,692s
+00:38:58,335 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+PerfDayComplex (Best case scenario) > Repository: Testing performance (50 000) - Per element 0.003306249946s
+PerfDayComplex (Best case scenario) > Repository: Testing performance (50 000) - Elements per second: 302.4574718586627
+PerfDayComplex (Best case scenario) > Repository: Testing performance (50 000) - Total duration 165,312s
+PerfDayComplex (Best case scenario) > Java: Testing performance (50 000) - Per element 0.00000030658000000000004s
+PerfDayComplex (Best case scenario) > Java: Testing performance (50 000) - Elements per second: 3261791.375823602
+PerfDayComplex (Best case scenario) > Java: Testing performance (50 000) - Total duration 0,015s
+PerfDayComplex (Best case scenario): Testing performance (50 000) - Per element 0.0033068300900000003s
+PerfDayComplex (Best case scenario): Testing performance (50 000) - Elements per second: 302.4044092933725
+PerfDayComplex (Best case scenario): Testing performance (50 000) - Total duration 165,342s
+00:41:28,334 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+00:43:58,335 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+00:46:28,333 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+PerfDayComplex (Worst case scenario): Inserting test data (50 000) - Per element 0.002796033348s
+PerfDayComplex (Worst case scenario): Inserting test data (50 000) - Elements per second: 357.64952543048133
+PerfDayComplex (Worst case scenario): Inserting test data (50 000) - Total duration 139,802s
+00:48:58,335 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+00:51:28,333 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+00:53:58,334 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+PerfDayComplex (Worst case scenario) > Repository: Testing performance (50 000) - Per element 0.009381467662s
+PerfDayComplex (Worst case scenario) > Repository: Testing performance (50 000) - Elements per second: 106.59312977760814
+PerfDayComplex (Worst case scenario) > Repository: Testing performance (50 000) - Total duration 469,073s
+PerfDayComplex (Worst case scenario) > Java: Testing performance (50 000) - Per element 0.000007405486s
+PerfDayComplex (Worst case scenario) > Java: Testing performance (50 000) - Elements per second: 135035.02673558495
+PerfDayComplex (Worst case scenario) > Java: Testing performance (50 000) - Total duration 0,37s
+PerfDayComplex (Worst case scenario): Testing performance (50 000) - Per element 0.009389366656s
+PerfDayComplex (Worst case scenario): Testing performance (50 000) - Elements per second: 106.50345615814025
+PerfDayComplex (Worst case scenario): Testing performance (50 000) - Total duration 469,468s
+Test data size: 41 553
+PerfDaySimple: Inserting test data (41 553) - Per element 0.0006744517916877241s
+PerfDaySimple: Inserting test data (41 553) - Elements per second: 1482.6856601531676
+PerfDaySimple: Inserting test data (41 553) - Total duration 28,025s
+PerfDaySimple > Repository: Testing performance (41 553) - Per element 0.0000010647341948836427s
+PerfDaySimple > Repository: Testing performance (41 553) - Elements per second: 939201.5442025725
+PerfDaySimple > Repository: Testing performance (41 553) - Total duration 0,044s
+PerfDaySimple > Java: Testing performance (41 553) - Per element 0.000000017900031285346426s
+PerfDaySimple > Java: Testing performance (41 553) - Elements per second: 55865824.14627588
+PerfDaySimple > Java: Testing performance (41 553) - Total duration 0,001s
+PerfDaySimple: Testing performance (41 553) - Per element 0.0000012475007821336605s
+PerfDaySimple: Testing performance (41 553) - Elements per second: 801602.703839313
+PerfDaySimple: Testing performance (41 553) - Total duration 0,052s
+00:56:28,334 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+00:58:58,333 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+01:01:28,334 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+01:03:58,333 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+01:06:28,334 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+01:08:58,333 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+PerfDayComplex (Best case scenario): Inserting test data (41 553) - Per element 0.001432784366953048s
+PerfDayComplex (Best case scenario): Inserting test data (41 553) - Elements per second: 697.9417301478484
+PerfDayComplex (Best case scenario): Inserting test data (41 553) - Total duration 59,536s
+01:11:28,335 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+PerfDayComplex (Best case scenario) > Repository: Testing performance (41 553) - Per element 0.0032350515967559503s
+PerfDayComplex (Best case scenario) > Repository: Testing performance (41 553) - Elements per second: 309.11408059234094
+PerfDayComplex (Best case scenario) > Repository: Testing performance (41 553) - Total duration 134,426s
+PerfDayComplex (Best case scenario) > Java: Testing performance (41 553) - Per element 0.0000005071884099824321s
+PerfDayComplex (Best case scenario) > Java: Testing performance (41 553) - Elements per second: 1971653.8870331005
+PerfDayComplex (Best case scenario) > Java: Testing performance (41 553) - Total duration 0,021s
+PerfDayComplex (Best case scenario): Testing performance (41 553) - Per element 0.0032358361947392483s
+PerfDayComplex (Best case scenario): Testing performance (41 553) - Elements per second: 309.03912924448343
+PerfDayComplex (Best case scenario): Testing performance (41 553) - Total duration 134,459s
+01:13:58,334 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+01:16:28,334 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+01:18:58,334 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+PerfDayComplex (Worst case scenario): Inserting test data (41 553) - Per element 0.002896568457151108s
+PerfDayComplex (Worst case scenario): Inserting test data (41 553) - Elements per second: 345.23610085277954
+PerfDayComplex (Worst case scenario): Inserting test data (41 553) - Total duration 120,361s
+01:21:28,334 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+01:23:58,335 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+PerfDayComplex (Worst case scenario) > Repository: Testing performance (41 553) - Per element 0.008350237345077371s
+PerfDayComplex (Worst case scenario) > Repository: Testing performance (41 553) - Elements per second: 119.75707499973275
+PerfDayComplex (Worst case scenario) > Repository: Testing performance (41 553) - Total duration 346,977s
+PerfDayComplex (Worst case scenario) > Java: Testing performance (41 553) - Per element 0.000008332661901667749s
+PerfDayComplex (Worst case scenario) > Java: Testing performance (41 553) - Elements per second: 120009.66939506498
+PerfDayComplex (Worst case scenario) > Java: Testing performance (41 553) - Total duration 0,346s
+PerfDayComplex (Worst case scenario): Testing performance (41 553) - Per element 0.008359085298293744s
+PerfDayComplex (Worst case scenario): Testing performance (41 553) - Elements per second: 119.63031412110604
+PerfDayComplex (Worst case scenario): Testing performance (41 553) - Total duration 347,345s
+Test data size: 4 155 328
+01:26:28,334 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+01:28:58,333 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+01:31:28,334 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+01:33:58,335 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+01:36:28,334 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+01:38:58,335 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+01:41:28,333 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+01:43:58,335 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+01:46:28,334 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+01:48:58,334 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+01:51:28,334 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+01:53:58,334 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+01:56:28,335 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+01:58:58,334 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+02:01:28,335 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+02:03:58,335 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+02:06:28,334 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+02:08:58,335 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+02:11:28,334 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+PerfDaySimple: Inserting test data (4 155 328) - Per element 0.0006846894661745114s
+PerfDaySimple: Inserting test data (4 155 328) - Elements per second: 1460.5161162872678
+PerfDaySimple: Inserting test data (4 155 328) - Total duration 2 845,109s
+PerfDaySimple > Repository: Testing performance (4 155 328) - Per element 0.0000018512612963405055s
+PerfDaySimple > Repository: Testing performance (4 155 328) - Elements per second: 540172.2609211123
+PerfDaySimple > Repository: Testing performance (4 155 328) - Total duration 7,693s
+PerfDaySimple > Java: Testing performance (4 155 328) - Per element 0.000000013655311927241364s
+PerfDaySimple > Java: Testing performance (4 155 328) - Elements per second: 73231575.03308818
+PerfDaySimple > Java: Testing performance (4 155 328) - Total duration 0,057s
+PerfDaySimple: Testing performance (4 155 328) - Per element 0.0000020030945330910098s
+PerfDaySimple: Testing performance (4 155 328) - Elements per second: 499227.5618948861
+PerfDaySimple: Testing performance (4 155 328) - Total duration 8,324s
+02:13:58,333 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+02:16:28,334 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+02:18:58,334 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+02:21:28,333 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+02:23:58,335 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+02:26:28,334 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+02:28:58,339 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+02:31:28,334 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+02:33:58,335 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+02:36:28,334 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+02:38:58,333 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+02:41:28,334 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+02:43:58,333 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+02:46:28,334 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+02:48:58,335 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+02:51:28,333 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+02:53:58,333 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+02:56:28,334 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+02:58:58,334 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+03:01:28,334 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+03:03:58,333 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+03:06:28,335 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+03:08:58,334 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+03:11:28,333 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+03:13:58,335 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+03:16:28,334 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+03:18:58,334 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+03:21:28,333 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+03:23:58,333 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+03:26:28,334 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+03:28:58,333 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+03:31:28,334 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+03:33:58,333 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+03:36:28,334 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+03:38:59,292 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+03:41:29,292 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+03:43:59,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+03:46:29,290 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+03:48:59,292 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+03:51:29,290 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+03:53:59,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+03:56:29,290 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+03:58:59,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+04:01:29,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+PerfDayComplex (Best case scenario): Inserting test data (4 155 328) - Per element 0.001439491576573498s
+PerfDayComplex (Best case scenario): Inserting test data (4 155 328) - Elements per second: 694.6897198109042
+PerfDayComplex (Best case scenario): Inserting test data (4 155 328) - Total duration 5 981,56s
+04:03:59,292 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+04:06:29,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+04:08:59,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+04:11:29,292 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+04:13:59,290 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+04:16:29,292 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+04:18:59,290 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+04:21:29,292 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+04:23:59,292 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+04:26:29,292 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+04:28:59,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+04:31:29,292 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+04:33:59,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+04:36:29,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+04:38:59,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+04:41:29,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+04:43:59,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+04:46:29,290 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+04:48:59,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+04:51:29,292 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+04:53:59,290 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+04:56:29,292 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+04:58:59,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+05:01:29,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+05:03:59,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+05:06:29,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+05:08:59,292 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+05:11:29,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+05:13:59,292 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+05:16:29,290 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+05:18:59,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+05:21:29,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+05:23:59,292 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+05:26:29,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+05:28:59,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+05:31:29,290 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+05:33:59,292 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+05:36:29,292 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+05:38:59,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+05:41:29,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+05:43:59,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+05:46:29,292 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+05:48:59,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+05:51:29,292 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+05:53:59,290 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+05:56:29,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+05:58:59,290 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+06:01:29,292 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+06:03:59,290 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+06:06:29,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+06:08:59,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+06:11:29,290 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+06:13:59,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+06:16:29,290 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+06:18:59,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+06:21:29,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+06:23:59,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+06:26:29,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+06:28:59,292 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+06:31:29,290 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+06:33:59,292 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+06:36:29,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+06:38:59,290 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+06:41:29,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+06:43:59,290 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+06:46:29,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+06:48:59,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+06:51:29,290 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+06:53:59,292 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+06:56:29,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+06:58:59,292 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+07:01:29,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+07:03:59,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+07:06:29,290 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+07:08:59,292 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+07:11:29,292 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+07:13:59,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+07:16:29,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+07:18:59,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+07:21:29,292 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+07:23:59,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+07:26:29,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+07:28:59,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+07:31:29,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+07:33:59,290 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+07:36:29,292 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+07:38:59,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+07:41:29,292 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+07:43:59,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+07:46:29,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+07:48:59,292 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+07:51:29,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+07:53:59,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+07:56:29,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+07:58:59,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+08:01:29,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+08:03:59,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+08:06:29,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+08:08:59,290 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+08:11:29,290 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+08:13:59,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+08:16:29,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+08:18:59,290 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+08:21:29,292 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+08:23:59,290 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+08:26:29,290 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+08:28:59,292 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+08:31:29,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+08:33:59,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+08:36:29,292 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+08:38:59,290 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+08:41:29,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+08:43:59,290 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+08:46:29,290 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+08:48:59,290 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+08:51:29,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+08:53:59,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+08:56:29,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+08:58:59,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+09:01:29,290 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+09:03:59,290 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+09:06:29,292 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+09:08:59,290 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+09:11:29,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+09:13:59,290 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+09:16:29,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+09:18:59,290 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+09:21:29,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+09:23:59,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+09:26:29,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+09:28:59,290 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+09:31:29,292 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+09:33:59,290 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+09:36:29,292 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+09:38:59,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+09:41:29,290 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+09:43:59,292 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+09:46:29,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+09:48:59,292 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+09:51:29,290 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+09:53:59,290 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+09:56:29,292 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+09:58:59,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+10:01:29,290 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+10:03:59,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+10:06:29,290 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+10:08:59,290 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+10:11:29,290 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+10:13:59,292 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+10:16:29,290 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+10:18:59,290 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+10:21:29,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 
+10:23:59,291 |-INFO in ReconfigureOnChangeTask(born:1579649338328) - Empty watch file list. Disabling 

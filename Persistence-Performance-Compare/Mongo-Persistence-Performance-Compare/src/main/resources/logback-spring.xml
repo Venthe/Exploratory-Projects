@@ -1,0 +1,38 @@
+<configuration debug="true" scan="true"
+               scanPeriod="150 seconds">
+    <property name="LOG_DIR" value="logs"/>
+    <timestamp key="byDay" datePattern="yyyyMMdd'T'HHmmss"/>
+
+    <appender name="CONSOLE"
+              class="ch.qos.logback.core.ConsoleAppender" target="System.out">
+        <encoder>
+            <charset>UTF-8</charset>
+            <Pattern>%msg%n
+            </Pattern>
+        </encoder>
+    </appender>
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>log-${byDay}.txt</file>
+        <append>true</append>
+        <encoder>
+            <pattern>%msg%n</pattern>
+        </encoder>
+    </appender>
+
+
+    <appender name="ASYNC_CONSOLE"
+              class="ch.qos.logback.classic.AsyncAppender">
+        <discardingThreshold>20
+        </discardingThreshold> <!-- default 20, means drop lower event when has 20% capacity remaining (0)-->
+        <appender-ref ref="CONSOLE"/>
+        <queueSize>256</queueSize> <!-- default 256 (1) -->
+        <includeCallerData>false</includeCallerData><!-- default false (true) -->
+        <neverBlock>false</neverBlock><!-- default false, set to true to cause the
+            Appender not block the application and just drop the messages (true) -->
+    </appender>
+
+    <root level="info">
+        <appender-ref ref="FILE"/>
+        <appender-ref ref="ASYNC_CONSOLE"/>
+    </root>
+</configuration>
