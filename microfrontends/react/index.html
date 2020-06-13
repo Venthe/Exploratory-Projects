@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello React!</title>
+    <script src="./node_modules/react/umd/react.development.js"></script>
+    <script src="./node_modules/react-dom/umd/react-dom.development.js"></script>
+    <script src="./dist/react-pong.js"></script>
+</head>
+
+<body>
+    <!-- <div id="example"></div> -->
+    <react-pong></react-pong>
+    <script>
+        window.microfrontend = {
+            store: {
+                dispatch: (event) => {
+                    window.microfrontend.store.store$.push(event);
+                },
+                store$: []
+            }
+
+        }
+        window.addEventListener("pong", ({detail}) => {
+            window.microfrontend.store.dispatch(detail);
+            console.log(window.microfrontend.store.store$, detail);
+        });
+    </script>
+</body>
+
+</html>

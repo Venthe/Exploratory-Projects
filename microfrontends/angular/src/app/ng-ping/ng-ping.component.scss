@@ -1,0 +1,11 @@
+@import "../../../node_modules/primeicons/primeicons.css";
+@import "../../../node_modules/primeng/resources/primeng.min.css";
+
+button {
+    background: green;
+
+    &:disabled,
+&[disabled]{
+        background: red !important;
+    }
+}

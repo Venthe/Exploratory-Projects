@@ -1,0 +1,19 @@
+<ng-container *ngIf="(store$ | async) as store; else notLoaded">
+    <div class="ui-g">
+        <div class="ui-g-12 ui-md-4">
+            <div class="ui-inputgroup">
+                <button [disabled]="getDisabled(store)" pButton type="button" label="Ping (Dispatch by key)"
+                    (click)="emitPingEventAsDispatch(inputText)"></button>
+                <button [disabled]="getDisabled(store)" pButton type="button" label="Ping (Event)"
+                    (click)="emitPingEvent(inputText)"></button>
+                <input id="float-input" pInputText type="text" placeholder="Keyword" [(ngModel)]="inputText">
+            </div>
+        </div>
+    </div>
+    <pre>isDisabled={{ getDisabled(store) | json }}</pre>
+    <pre>currentEvent={{ getCurrentEvent(store) | json }}</pre>
+    <pre>store={{ store | json }}</pre>
+</ng-container>
+<ng-template #notLoaded>
+    Store loading...
+</ng-template>

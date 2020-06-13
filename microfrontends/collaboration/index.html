@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Collaboration</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <button onClick="window.microfrontend.store.store$.push({type:'ping',payload:{id:'other', text:'someText'}})">Send
+        random event</button>
+
+    <div style="width:95vw; display: flex;">
+        <div style="width:50%; border:1px solid red;">
+            <h1>Angular</h1>
+            <ng-ping store-key="microfrontend.store.store$" dispatch-key="microfrontend.store.dispatch"></ng-ping>
+        </div>
+        <div style="width:50%; border:1px solid blue;">
+            <h1>REACT</h1>
+            <react-pong></react-pong>
+        </div>
+    </div>
+
+
+    <script>
+        window.microfrontend = {
+            store: {
+                dispatch: event => {
+                    console.warn("Dispatched ", event);
+                    window.microfrontend.store.store$.push(event);
+                },
+                store$: []
+            }
+        }
+
+        const el = document.querySelector('ng-ping');
+        [el, window].forEach(domElement => {
+            domElement.addEventListener('pingEmitter', ({ detail }) => {
+                window.microfrontend.store.dispatch(detail);
+            });
+        });
+    </script>
+    <script src="ng-ping.js"></script>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="react-pong.js"></script>
+    <script src="react-pong.js.map"></script>
+</body>
+
+</html>
