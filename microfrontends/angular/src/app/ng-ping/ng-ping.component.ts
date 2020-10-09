@@ -32,9 +32,8 @@ export class NgPingComponent implements OnInit {
   @Input() dispatchKey: string;
 
 
-  constructor(private readonly ref: ChangeDetectorRef) {
-    
-  }
+  constructor(private readonly ref: ChangeDetectorRef) {}
+  
   getCurrentEvent(store: MyEvent[]): MyEvent {
     return store.slice(-1)[0];
   }
