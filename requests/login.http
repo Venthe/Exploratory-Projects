@@ -1,0 +1,20 @@
+### Show Login (And get CSRF)
+GET localhost:8080/login
+
+###
+POST localhost:8080/login
+Content-Type: application/x-www-form-urlencoded
+
+username=user&password=password&_csrf=a5608170-6dd3-47fa-8fdb-bb573d2e83d1
+
+###
+GET localhost:8080
+
+### Show logout (And get CSRF)
+GET localhost:8080/logout
+
+###
+POST localhost:8080/logout
+Content-Type: application/x-www-form-urlencoded
+
+_csrf=0eb12d30-4e91-484c-82dd-fd5dbc5ae83d

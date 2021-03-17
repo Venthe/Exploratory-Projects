@@ -1,0 +1,12 @@
+spring:
+  security:
+    user:
+      name: user
+      password: password
+      roles:
+        - developer
+
+logging.level:
+  org.springframework.boot.autoconfigure.security: TRACE
+  org.springframework.security: TRACE
+  org.springframework.web: INFO
