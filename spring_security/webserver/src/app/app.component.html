@@ -1,0 +1,7 @@
+<button (click)="login()">Login</button>
+<button (click)="logout()">Logout</button>
+<button (click)="getData()">Data</button>
+<pre>{{userData | async | json}}</pre>
+<pre *ngIf="(data | async) as dataa">{{dataa | json}}</pre>
+
+<router-outlet></router-outlet>
