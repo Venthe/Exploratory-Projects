@@ -1,0 +1,29 @@
+togglz:
+  features:
+    FOO.enabled: true
+    BAR:
+      enabled: true
+      label: This is test label
+      groups: test
+      strategy: random
+      param:
+        percentage: 50
+  console:
+    secured: false
+  feature-enums:
+    - eu.venthe.togglz.programmatic.MyFeatures
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - togglz
+          - health
+          - info
+  endpoint:
+    togglz.enabled: true
+
+spring:
+  main:
+    lazy-initialization: true
