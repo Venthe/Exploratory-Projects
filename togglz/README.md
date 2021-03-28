@@ -1,5 +1,6 @@
 ### problems
 - if feature is set via annotations, one can not change default state by config
+- Bean configuration via feature toggle does not work
 
 ### not covered
 - state repository
