@@ -1,0 +1,20 @@
+###
+GET {{server}}/togglz-console/
+
+###
+GET {{server}}/actuator/togglz
+
+###
+POST {{server}}/actuator/togglz/FOO
+Content-Type: application/json
+
+{"enabled": true}
+
+###
+POST {{server}}/actuator/togglz/FOO
+Content-Type: application/json
+
+{"enabled": false}
+
+###
+GET {{server}}/data
