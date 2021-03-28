@@ -1,0 +1,2 @@
+from-vault: ${key}
+from-vault-2: ${nested.key}
