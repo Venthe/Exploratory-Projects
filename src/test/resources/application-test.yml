@@ -1,6 +1,0 @@
-example:
-  text1: "test.example.text1"
-  text2: "test.example.text2"
-  nested:
-    text: "test.example.nested.text"
-    number: 321
