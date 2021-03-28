@@ -1,0 +1,2 @@
+- Make resource server act as authorization server
+- provide own login page

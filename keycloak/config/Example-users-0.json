@@ -1,0 +1,32 @@
+{
+  "realm" : "Example",
+  "users" : [ {
+    "id" : "170fdc3a-0474-4b3d-a5a6-b437f12bd5e2",
+    "createdTimestamp" : 1616889035759,
+    "username" : "jlipiec",
+    "enabled" : true,
+    "totp" : false,
+    "emailVerified" : false,
+    "credentials" : [ {
+      "id" : "a51aafa1-9eb4-4268-93dd-f0bd09b8c34b",
+      "type" : "password",
+      "createdDate" : 1616889049526,
+      "secretData" : "{\"value\":\"LYlYgmfUV8+L0NwumxDJE13+vBxnzJefpNGfr5M+0/q/0sZU/QpEJKanssB9vxCa4xMlPnr/BBN3V0odI5OGEQ==\",\"salt\":\"T8GNpguGerm1qnwLwBLUuA==\",\"additionalParameters\":{}}",
+      "credentialData" : "{\"hashIterations\":27500,\"algorithm\":\"pbkdf2-sha256\",\"additionalParameters\":{}}"
+    } ],
+    "disableableCredentialTypes" : [ ],
+    "requiredActions" : [ ],
+    "realmRoles" : [ "offline_access", "uma_authorization" ],
+    "clientRoles" : {
+      "account" : [ "manage-account", "view-profile" ]
+    },
+    "clientConsents" : [ {
+      "clientId" : "example-client",
+      "grantedClientScopes" : [ "roles", "profile", "email", "openid" ],
+      "createdDate" : 1616889166836,
+      "lastUpdatedDate" : 1616889166842
+    } ],
+    "notBefore" : 0,
+    "groups" : [ ]
+  } ]
+}

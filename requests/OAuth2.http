@@ -1,0 +1,2 @@
+### Show Login (And get CSRF)
+GET localhost:8081/api/v1/data
