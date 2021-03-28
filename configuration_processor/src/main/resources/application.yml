@@ -1,0 +1,6 @@
+example:
+  text1: "example.text1"
+  text2: "example.text2"
+  nested:
+    text: "example.nested.text"
+    number: 123
