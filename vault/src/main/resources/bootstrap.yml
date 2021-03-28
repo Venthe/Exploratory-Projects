@@ -1,0 +1,5 @@
+spring.cloud.vault:
+  authentication: TOKEN
+  application-name: example
+  token: vault_development_token
+  uri: http://localhost:8200
