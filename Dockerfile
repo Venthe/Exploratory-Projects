@@ -10,6 +10,7 @@ WORKDIR application
 EXPOSE 8080
 # Potential point of hard-to-find problems; as we hardcode layers found in layers.idx
 COPY --from=builder application/dependencies/ ./
+COPY --from=builder application/jackson/ ./
 COPY --from=builder application/spring-boot-loader/ ./
 COPY --from=builder application/snapshot-dependencies/ ./
 COPY --from=builder application/application/ ./
