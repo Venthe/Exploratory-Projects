@@ -46,6 +46,9 @@
                     <!-- 	<enabled>true</enabled> -->
                     <!-- </layers>-->
 					<!-- Version 2.4.* has this enabled by default -->
+					<layers>
+						<configuration>${project.basedir}/src/layers.xml</configuration>
+					</layers>
 					<excludes>
 						<exclude>
 							<groupId>org.projectlombok</groupId>
