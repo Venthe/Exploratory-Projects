@@ -41,6 +41,11 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
+					<!-- Version 2.3.* of Spring Boot requires configuration -->
+                    <!-- <layers>-->
+                    <!-- 	<enabled>true</enabled> -->
+                    <!-- </layers>-->
+					<!-- Version 2.4.* has this enabled by default -->
 					<excludes>
 						<exclude>
 							<groupId>org.projectlombok</groupId>
