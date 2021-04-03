@@ -10,6 +10,6 @@ import static java.text.MessageFormat.format;
 public class SampleController {
     @GetMapping("/")
     public String getExample() {
-        return format("Example {0}", Ni.ni());
+        return format("Example {0}!", Ni.ni());
     }
 }
