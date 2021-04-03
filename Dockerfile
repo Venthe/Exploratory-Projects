@@ -1,7 +1,7 @@
 
 FROM adoptopenjdk:11.0.10_9-jre-hotspot as builder
 WORKDIR application
-COPY application/target/app.jar app.jar
+COPY target/app.jar app.jar
 # Will unzip the jar to directories according to BOOT-INF/layers.idx
 RUN java -Djarmode=layertools -jar app.jar extract
 
