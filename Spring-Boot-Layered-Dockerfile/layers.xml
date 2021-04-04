@@ -1,0 +1,41 @@
+<layers xmlns="http://www.springframework.org/schema/boot/layers"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/boot/layers
+                     https://www.springframework.org/schema/boot/layers/layers-2.4.xsd">
+    <!-- The <application> section uses Ant-style path matching for include/exclude expressions-->
+    <application>
+        <into layer="spring-boot-loader">
+            <include>org/springframework/boot/loader/**</include>
+        </into>
+        <into layer="utils">
+            <include>BOOT-INF/classes/eu/venthe/layered_dockerfile/utils/**/*</include>
+        </into>
+        <into layer="application"/>
+    </application>
+    <!-- The <dependencies> section uses group:artifact[:version] pattern -->
+    <dependencies>
+        <!-- The blocks are evaluated in the order that they are defined,
+        from top to bottom. Any content not claimed by an earlier block
+        remains available for subsequent blocks to consider.-->
+        <into layer="jackson">
+            <include>com.fasterxml*:*</include>
+        </into>
+        <into layer="project-modules">
+            <include>*eu.venthe*:*</include>
+        </into>
+        <into layer="snapshot-dependencies">
+            <include>*:*:*SNAPSHOT</include>
+        </into>
+        <into layer="dependencies"/>
+    </dependencies>
+    <layerOrder>
+        <layer>dependencies</layer>
+        <!-- Assuming jackson changes more frequently than other dependencies :) -->
+        <layer>jackson</layer>
+        <layer>spring-boot-loader</layer>
+        <layer>snapshot-dependencies</layer>
+        <layer>project-modules</layer>
+        <layer>utils</layer>
+        <layer>application</layer>
+    </layerOrder>
+</layers>
