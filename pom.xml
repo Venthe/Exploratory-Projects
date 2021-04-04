@@ -16,6 +16,7 @@
     </parent>
 
     <modules>
+        <module>super-utils</module>
         <module>application</module>
     </modules>
 
@@ -41,7 +42,6 @@
     </dependencies>
 
     <build>
-        <finalName>app</finalName>
         <pluginManagement>
             <plugins>
                 <plugin>
