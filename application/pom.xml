@@ -7,6 +7,7 @@
         <artifactId>layered-dockerfile</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
+    <name>layered-dockerfile :: application</name>
     <artifactId>application</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <description>Demo project for Spring Boot</description>
