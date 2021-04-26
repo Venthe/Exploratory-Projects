@@ -1,0 +1,17 @@
+# Required by Sleuth
+spring.application.name: Distributed Tracing #1
+spring.sleuth.traceId128: true
+
+custom.log.file:
+  path: ./logs/
+
+# <property name="LOG_FILE" value="${LOG_FILE:-${LOG_PATH:-${LOG_TEMP:-${java.io.tmpdir:-/tmp}}}/spring.log}"/>
+logging:
+  level.org.springframework.web.servlet.DispatcherServlet: DEBUG
+  file:
+    path: ./logs/
+  # This is using the very same hack as org.springframework.cloud.sleuth.autoconfig.TraceEnvironmentPostProcessor
+  #  namely, we are hijacking pattern for level to inject parentId defined as additional field
+  pattern:
+    level: "%5p [${spring.zipkin.service.name:${spring.application.name:}},%X{traceId:-},%X{parentId:-},%X{spanId:-}]"
+

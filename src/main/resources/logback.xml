@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+
+    <springProfile name="logback">
+        <springProperty scope="context" name="LOGBACK_LOG_FILE" source="custom.log.file.name"/>
+        <springProperty scope="context" name="LOGBACK_LOG_PATH" source="custom.log.file.path"/>
+        <property name="LOGBACK_LOG_FILE"
+                  value="${LOGBACK_LOG_FILE:-${LOGBACK_LOG_PATH:-${LOG_TEMP:-${java.io.tmpdir:-/tmp}}}/spring.logback}"/>
+
+        <appender name="LOGSTASH" class="ch.qos.logback.core.rolling.RollingFileAppender">
+            <file>${LOGBACK_LOG_FILE}</file>
+            <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                <fileNamePattern>${LOGBACK_LOG_FILE}.%d{yyyy-MM-dd}.gz</fileNamePattern>
+                <maxHistory>7</maxHistory>
+            </rollingPolicy>
+            <encoder class="net.logstash.logback.encoder.LogstashEncoder"/>
+        </appender>
+
+        <root level="INFO">
+            <appender-ref ref="LOGSTASH"/>
+        </root>
+    </springProfile>
+</configuration>
