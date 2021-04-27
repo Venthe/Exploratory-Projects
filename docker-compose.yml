@@ -1,0 +1,9 @@
+version: "3.0"
+services:
+  graphql-voyager:
+    restart: always
+    environment:
+      GRAPHQL_ENDPOINT: 127.0.0.1:8080/graphql
+    ports:
+    - 8081:80
+    image: graphql/voyager
