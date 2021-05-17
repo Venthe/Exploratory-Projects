@@ -1,0 +1,17 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: generated
+      changes:
+        - createTable:
+            tableName: my_entity
+            columns:
+              - column:
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: id_pkey
+                  name: id
+                  type: uuid
+              - column:
+                  name: value
+                  type: bigint
