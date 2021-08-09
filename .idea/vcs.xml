@@ -2,5 +2,7 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/jasper_server" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/jasper_server/submodule/docker-seed" vcs="Git" />
   </component>
 </project>

@@ -2,22 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="07b5bdb7-b155-41d1-8b06-88a2760792ba" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/gherkin-demo/src/test/java/test/TestMockStepDefinitions.java" beforeDir="false" afterPath="$PROJECT_DIR$/gherkin-demo/src/test/java/test/TestMockStepDefinitions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gherkin-demo/src/test/java/test/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/gherkin-demo/src/test/java/test/TestRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gherkin-demo/src/test/resources/sample.feature" beforeDir="false" afterPath="$PROJECT_DIR$/gherkin-demo/src/test/resources/sample.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jasper_server/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jasper_server/.gitmodules" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jasper_server/docker-compose..yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jasper_server/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jasper_server/src/main/java/eu/venthe/jasper_server/JasperServerApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jasper_server/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jasper_server/src/main/resources/reports.jrxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jasper_server/src/test/java/eu/venthe/jasper_server/JasperServerApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Exploratory-Projects.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
   </component>
   <component name="DefaultGradleProjectSettings">
     <option name="testRunner" value="GRADLE" />
     <option name="delegatedBuild" value="true" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/jasper_server" />
+  </component>
+  <component name="KubernetesApiPersistence">
+    <option name="context" value="kubernetes-admin@kubernetes" />
+    <option name="namespace" value="default" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
@@ -25,6 +43,8 @@
     <option name="width" value="1873" />
     <option name="height" value="1096" />
   </component>
+  <component name="ProjectId" id="1wVNat56piRfH2OdWd1xYXrTu7S" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -50,7 +70,13 @@
       <pane id="PackagesPane" />
     </panes>
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -58,30 +84,52 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Repositories\_github\Exploratory-Projects\Test-Containers\src\main\java\eu\venthe\testcontainers" />
+      <recent name="F:\Repositories\_github\Exploratory-Projects\Test-Containers\src\test\java\eu\venthe\testcontainers" />
+      <recent name="F:\Repositories\_github\Exploratory-Projects" />
+    </key>
   </component>
+  <component name="RunManager" selected="npm.start" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="07b5bdb7-b155-41d1-8b06-88a2760792ba" name="Default Changelist" comment="" />
+      <changelist id="" name="Remove mvn wrapper from Spring Security" comment="" />
+      <changelist id="" name="Remove mvn wrapper from Archunit" comment="" />
       <created>1563828963368</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1563828963368</updated>
       <workItem from="1563828964953" duration="474000" />
+      <workItem from="1628539866529" duration="2517000" />
     </task>
+    <task id="LOCAL-00001" summary="Remove build tool wrappers">
+      <created>1628540862136</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1628540862136</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add test to TestContainers">
+      <created>1628541638776</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1628541638776</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Remove empty properties file from Mutation Testing">
+      <created>1628541746549</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1628541746549</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -121,7 +169,14 @@
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <confirmRemoveEmptyChangelist value="2" />
+    <MESSAGE value="Remove build tool wrappers" />
+    <MESSAGE value="Add test to TestContainers" />
+    <MESSAGE value="Remove empty properties file from Mutation Testing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove empty properties file from Mutation Testing" />
   </component>
   <component name="masterDetails">
     <states>
