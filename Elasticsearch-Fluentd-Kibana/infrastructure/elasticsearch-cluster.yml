@@ -1,0 +1,106 @@
+version: "3.8"
+services:
+  # sysctl -w vm.max_map_count=262144
+  # sysctl -w fs.file-max=131072
+  # ulimit -n 131072
+  # ulimit -u 8192
+  # https://hub.docker.com/_/elasticsearch
+  elasticsearch-base:
+    image: docker.io/library/elasticsearch:7.14.0
+    #ports:
+    #  # API calls over HTTP. This includes search and aggregations, monitoring and anything else that uses a HTTP request.
+    #  # All client libraries will use this port to talk to Elasticsearch
+    #  - '9200:9200/tcp'
+    #  # custom binary protocol used for communications between nodes in a cluster.
+    #  # For things like cluster updates, master elections, nodes joining/leaving, shard allocation
+    #  - "9300:9300/tcp"
+    #  # Logstash port?
+    #  - '9600:9600/tcp'
+    #  # Performance analyzer?
+    #  - "9650:9650/tcp"
+    environment:
+      #discovery.type: single-node
+      # along with the memlock settings below, disables swapping
+      bootstrap.memory_lock: true
+      # plugins.security.ssl.http.enabled: false
+      # minimum and maximum Java heap size, recommend setting both to 50% of system RAM
+      ES_JAVA_OPTS: -Xms512m -Xmx512m
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+      nofile:
+        soft: 65536
+        hard: 65536
+    stop_grace_period: 1m30s
+    #volumes:
+    #  - elasticsearch_data:/usr/share/elasticsearch/data
+
+  elasticsearch_1:
+    environment:
+      node.name: elasticsearch_1
+      # cluster.name: es-docker-cluster
+      discovery.seed_hosts: elasticsearch_2,elasticsearch_3
+      cluster.initial_master_nodes: elasticsearch_1,elasticsearch_2,elasticsearch_3
+    extends:
+      service: elasticsearch-base
+    volumes:
+      - elasticsearch_data_1:/usr/share/elasticsearch/data
+  elasticsearch_2:
+    environment:
+      node.name: elasticsearch_2
+      # cluster.name: es-docker-cluster
+      discovery.seed_hosts: elasticsearch_1,elasticsearch_3
+      cluster.initial_master_nodes: elasticsearch_1,elasticsearch_2,elasticsearch_3
+    extends:
+      service: elasticsearch-base
+    volumes:
+      - elasticsearch_data_2:/usr/share/elasticsearch/data
+  elasticsearch_3:
+    environment:
+      node.name: elasticsearch_3
+      # cluster.name: es-docker-cluster
+      discovery.seed_hosts: elasticsearch_2,elasticsearch_1
+      cluster.initial_master_nodes: elasticsearch_1,elasticsearch_2,elasticsearch_3
+    extends:
+      service: elasticsearch-base
+    volumes:
+      - elasticsearch_data_3:/usr/share/elasticsearch/data
+
+  elasticsearch:
+    depends_on:
+      - elasticsearch_1
+      - elasticsearch_2
+      - elasticsearch_3
+    image: docker.io/library/nginx:1.21.1-alpine
+    ports:
+      - 9200:9200
+      - 9300:9300
+      - 9600:9600
+      - 9650:9650
+    volumes:
+      - ./elasticsearch-nginx.conf:/etc/nginx/nginx.conf:ro
+
+  # https://hub.docker.com/_/kibana
+  kibana:
+    image: docker.io/library/kibana:7.14.0
+    environment:
+     ELASTICSEARCH_HOSTS: http://elasticsearch:9200
+    ports:
+      - '5601:5601'
+    depends_on:
+      - elasticsearch
+
+  # https://hub.docker.com/r/elastichq/elasticsearch-hq
+  elasticsearch_hq:
+    image: docker.io/elastichq/elasticsearch-hq:release-v3.5.12
+    environment:
+      HOST: localhost
+      ES_HOST: elasticsearch
+      HQ_DEFAULT_URL: http://elasticsearch:9200
+    ports:
+      - '5000:5000'
+    profiles:
+      - monitoring
+    depends_on:
+      - elasticsearch

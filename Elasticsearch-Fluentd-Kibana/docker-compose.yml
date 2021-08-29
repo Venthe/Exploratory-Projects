@@ -1,0 +1,51 @@
+version: "3.8"
+services:
+  elasticsearch_1:
+    extends:
+      service: elasticsearch_1
+      file: ./infrastructure/elasticsearch-cluster.yml
+
+  elasticsearch_2:
+    extends:
+      service: elasticsearch_2
+      file: ./infrastructure/elasticsearch-cluster.yml
+  
+  elasticsearch_3:
+    extends:
+      service: elasticsearch_3
+      file: ./infrastructure/elasticsearch-cluster.yml
+
+  elasticsearch:
+    extends:
+      service: elasticsearch
+      file: ./infrastructure/elasticsearch-cluster.yml
+
+  kibana:
+    extends:
+      service: kibana
+      file: ./infrastructure/elasticsearch-cluster.yml
+
+  elasticsearch_hq:
+    extends:
+      service: elasticsearch_hq
+      file: infrastructure/elasticsearch-cluster.yml
+
+  # https://hub.docker.com/r/fluent/fluentd
+  fluentd:
+    ports:
+      - '24224:24224'
+      - '24224:24224/udp'
+    volumes:
+      - fluentd_data:/fluentd/log
+      - ./logs/:/var/log/file/
+      - ./infrastructure/fluentd_logstash_logfile.conf:/fluentd/etc/fluent.conf:ro
+    # To add elasticsearch
+    build:
+      context: ./infrastructure
+      dockerfile: fluentd.Dockerfile
+
+volumes:
+  elasticsearch_data_1: { }
+  elasticsearch_data_2: { }
+  elasticsearch_data_3: { }
+  fluentd_data: { }
