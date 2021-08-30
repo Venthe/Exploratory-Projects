@@ -1,0 +1,42 @@
+openapi: 3.0.1
+info:
+  title: Customer
+  version: 1.0.0
+paths: {}
+components:
+  schemas:
+    CreateCustomer:
+      type: object
+      readOnly: true
+      properties:
+        nip:
+          type: string
+          maxLength: 36
+        regon:
+          type: string
+          maxLength: 21
+        customerAccounts:
+          type: array
+          items:
+            $ref: '#/components/schemas/CreateAccount'
+        customerNumber:
+          $ref: '#/components/schemas/CustomerNumber'
+
+    CreateAccount:
+        type: object
+        readOnly: true
+        properties:
+          currency:
+            $ref: '#/components/schemas/Currency'
+          iban:
+            $ref: '#/components/schemas/IBAN'
+
+    IBAN:
+      type: string
+      example: DE2310010010123456788
+
+    Currency:
+      type: string
+      minLength: 3
+      maxLength: 3
+      example: EUR
