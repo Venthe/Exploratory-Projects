@@ -12,9 +12,13 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.22.3"
+    "react-router-dom": "^6.22.3",
+    "single-spa": "^6.0.1",
+    "single-spa-react": "^6.0.1",
+    "vite-plugin-single-spa": "^0.6.1"
   },
   "devDependencies": {
+    "@types/node": "^20.11.30",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
     "@typescript-eslint/eslint-plugin": "^7.2.0",

@@ -5,7 +5,7 @@ export const Navigation = () => {
     return <>
     <nav className="navigation">
         <Link to={"/"}>Home</Link>
-        <Link to={"/ufronted-example-a"}>uFrontend example a</Link>
+        <Link to={"/example-a"}>uFrontend example a</Link>
         <Link to={"/error"}>Test error page</Link>
     </nav>
     </>
