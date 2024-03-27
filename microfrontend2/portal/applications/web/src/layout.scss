@@ -1,0 +1,12 @@
+.layout {
+    display: grid;
+    grid-template-rows: min-content 1fr;
+
+    &__navigation {
+        width: 100%;
+    }
+
+    &__content {
+        padding: 1rem;
+    }
+}
