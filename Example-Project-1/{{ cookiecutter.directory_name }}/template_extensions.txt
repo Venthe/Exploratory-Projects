@@ -1,0 +1,6 @@
+{% markdown %}
+# Heading
+Regular text
+
+    print("Hello world!")
+{% endmarkdown %}

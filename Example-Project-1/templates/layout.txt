@@ -1,0 +1,2 @@
+{% block a %}Default A{% endblock %}
+{% block b %}Default B{% endblock %}

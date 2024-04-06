@@ -1,0 +1,8 @@
+{%- if cookiecutter.license == "MIT" -%}
+# MIT License
+
+{%- elif cookiecutter.license == "BSD-3" -%}
+
+{{ raise_exception("Unsupported") }}
+
+{% endif %}

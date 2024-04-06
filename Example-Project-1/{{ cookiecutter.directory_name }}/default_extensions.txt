@@ -1,0 +1,5 @@
+{{ random_ascii_string(12) }}
+{{ random_ascii_string(12, punctuation=True) }}
+{{ uuid4() }}
+{{ "It's a random version" | slugify }}
+{{ {'a': True} | jsonify }}

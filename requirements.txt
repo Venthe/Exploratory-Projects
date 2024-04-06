@@ -1,0 +1,4 @@
+Cookiecutter==2.6.0
+uuid7==0.1.0
+jinja_markdown==v1.210911
+pyyaml==6.0.1
