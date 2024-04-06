@@ -1,0 +1,12 @@
+{{ cookiecutter.package_name }}
+{{ cookiecutter.year }}
+{{ cookiecutter.module_name }}
+{{ cookiecutter.package_name_stylized }}
+{{ cookiecutter.short_description }}
+{{ cookiecutter.github_username }}
+{{ cookiecutter.full_name }}
+{{ cookiecutter.email }}
+{{ cookiecutter.init_git }}
+{{ cookiecutter.linting }}
+{{ cookiecutter._not_rendered }}
+{{ cookiecutter.__rendered }}

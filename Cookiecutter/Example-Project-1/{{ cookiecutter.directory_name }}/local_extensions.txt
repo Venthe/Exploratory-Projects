@@ -1,0 +1,4 @@
+{{ 2 | simplefilterextension2 }}
+{{ 2 | foobar2 }}
+{{ uuid7() }}
+{{ test() }}

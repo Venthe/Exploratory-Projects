@@ -1,0 +1,3 @@
+{% for server in cookiecutter.array.elements -%}
+{{ server }}
+{% endfor %}

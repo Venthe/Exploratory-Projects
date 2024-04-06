@@ -1,0 +1,14 @@
+{
+    "templates": {
+        "1": {
+            "path": "./Example-Project-1",
+            "title": "Example Project 1",
+            "description": "A cookiecutter template for a project"
+        },
+        "2": {
+            "path": "./Example-Project-2",
+            "title": "Example Project 2",
+            "description": "A cookiecutter template for a package2"
+        }
+    }
+}

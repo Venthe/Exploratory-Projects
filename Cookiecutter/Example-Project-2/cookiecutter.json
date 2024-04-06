@@ -1,0 +1,7 @@
+{
+    "project_name": "my-package",
+    "_extensions": [
+        "local_extensions.simplefilterextension",
+        "local_extensions.FoobarExtension"
+    ]
+}
